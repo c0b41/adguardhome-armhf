@@ -1,0 +1,22 @@
+ARG ARCH=armhf
+ARG DOCKERSRC=alpine-s6
+ARG USERNAME=woahbase
+#
+FROM woahbase/alpine-s6:armhf
+#
+ARG PUID=1001
+ARG PGID=1001
+ENV ADGUARD_VERSION=v0.95-hotfix
+#
+
+RUN set -xe \
+    && apk add --no-cache --purge -uU \
+    curl \
+    && rm -rf /var/cache/apk/* /tmp/*
+
+EXPOSE 53/tcp 53/udp 67/tcp 67/udp 68/tcp 68/udp 80/tcp 443/tcp 853/tcp 853/udp 3000/tcp
+
+# add local files
+COPY root/ /
+
+ENTRYPOINT ["/init"]
