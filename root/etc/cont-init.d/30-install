@@ -5,8 +5,8 @@ mkdir -p \
 	/config/{adguard,log/adguard} \
 
 
-wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_VERSION}/AdGuardHome_${ADGUARD_VERSION}_linux_arm.tar.gz -P /tmp &&
-tar -xvf /tmp/AdGuardHome_${ADGUARD_VERSION}_linux_arm.tar.gz &&
+wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_VERSION}/AdGuardHome_linux_arm.tar.gz -P /tmp &&
+tar -xvf /tmp/AdGuardHome_linux_arm.tar.gz &&
 cp ./AdGuardHome/AdGuardHome /usr/sbin/adguard && rm -rf /AdGuardHome && rm -rf /tmp/AdGuardHome
 
 # permissions
