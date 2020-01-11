@@ -6,7 +6,7 @@ FROM woahbase/alpine-s6:armhf
 #
 ARG PUID=1001
 ARG PGID=1001
-ENV ADGUARD_VERSION=v0.100.7
+ENV ADGUARD_VERSION=v0.100.8
 #
 
 RUN set -xe \
