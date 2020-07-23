@@ -5,9 +5,9 @@ mkdir -p \
 	/config/{adguard,log/adguard} \
 
 
-wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_VERSION}/AdGuardHome_linux_arm.tar.gz -P /tmp &&
-tar -xvf /tmp/AdGuardHome_linux_arm.tar.gz &&
-cp ./AdGuardHome/AdGuardHome /usr/sbin/adguard && rm -rf /AdGuardHome && rm -rf /tmp/AdGuardHome
+wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv6.tar.gz -P /tmp &&
+tar -xvf /tmp/AdGuardHome_linux_armv6.tar.gz &&
+cp ./AdGuardHome_linux_armv6/AdGuardHome/AdGuardHome /usr/sbin/adguard && rm -rf /AdGuardHome_linux_armv6 && rm -rf /tmp/AdGuardHome_linux_armv6
 
 # permissions
 chown -R alpine:alpine \
