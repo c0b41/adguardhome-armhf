@@ -2,19 +2,23 @@
 
 # make our folders
 mkdir -p \
-	/config/{adguard,log/adguard} \
+        /config/{adguard,log/adguard} \
 
+# install latest version adguard home
+wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv6.tar.gz -P /tmp
 
-wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv6.tar.gz -P /tmp &&
-tar -xvf /tmp/AdGuardHome_linux_armv6.tar.gz &&
-cp ./AdGuardHome_linux_armv6/AdGuardHome/AdGuardHome /usr/sbin/adguard && rm -rf /AdGuardHome_linux_armv6 && rm -rf /tmp/AdGuardHome_linux_armv6
+tar -xvf /tmp/AdGuardHome_linux_armv6.tar.gz -C /tmp
+
+cp /tmp/AdGuardHome/AdGuardHome /usr/sbin/adguard
+
+rm -rf /tmp/AdGuardHome*
 
 # permissions
 chown -R alpine:alpine \
-	/config \
-	/run 
+        /config \
+        /run
 
 chmod -R g+w \
-	/config/{adguard,log}
+        /config/{adguard,log}
 
 chmod -R 644 /etc/logrotate.d /config/log
