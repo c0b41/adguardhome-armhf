@@ -5,7 +5,7 @@ mkdir -p \
         /config/{adguard,log/adguard} \
 
 # install latest version adguard home
-wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_armv6.tar.gz -P /tmp
+wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_VERSION}/AdGuardHome_linux_armv6.tar.gz -P /tmp
 
 tar -xvf /tmp/AdGuardHome_linux_armv6.tar.gz -C /tmp
 
