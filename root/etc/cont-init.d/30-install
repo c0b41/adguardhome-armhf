@@ -9,6 +9,8 @@ wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_VERS
 
 tar -xvf /tmp/AdGuardHome_linux_armv6.tar.gz -C /tmp
 
+gpg --verify /tmp/AdGuardHome/AdGuardHome.sig
+
 cp /tmp/AdGuardHome/AdGuardHome /usr/sbin/adguard
 
 rm -rf /tmp/AdGuardHome*

@@ -12,7 +12,10 @@ ENV ADGUARD_VERSION=v0.104.0
 RUN set -xe \
     && apk add --no-cache --purge -uU \
     curl \
+    gnupg \
     && rm -rf /var/cache/apk/* /tmp/*
+
+RUN gpg --keyserver pgp.key-server.io --recv-key 1222CCA0
 
 EXPOSE 53/tcp 53/udp 67/tcp 67/udp 68/tcp 68/udp 80/tcp 443/tcp 853/tcp 853/udp 3000/tcp
 
